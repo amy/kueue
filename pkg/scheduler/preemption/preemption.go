@@ -602,12 +602,3 @@ func quotaReservationTime(wl *kueue.Workload, now time.Time) time.Time {
 	}
 	return cond.LastTransitionTime.Time
 }
-
-// getWorkloadInfosFromTargets extracts workload.Info from Target slice for logging
-func getWorkloadInfosFromTargets(targets []*Target) []*workload.Info {
-	workloads := make([]*workload.Info, len(targets))
-	for i, target := range targets {
-		workloads[i] = target.WorkloadInfo
-	}
-	return workloads
-}
